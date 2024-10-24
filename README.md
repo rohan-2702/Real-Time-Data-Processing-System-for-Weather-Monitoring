@@ -63,34 +63,32 @@ Follow these steps to set up and run the application:
 4. **Access the Dashboard**
    Once the application is running, you can access the weather monitoring dashboard by visiting:
     ```
-    http://localhost:8080/dashboard/daily
+    http://localhost:8080/dashboard/dailySummary
+    http://localhost:8080/dashboard/weatherForecast
+    http://localhost:8080/dashboard/historicalData
     ```
 
 ## 📋 API Endpoints (Use POSTMAN to test )
 The following REST APIs are available:
+- [API Documentaion Link](Link)
+  
+1. **Daily Summaries**
+   - `GET /weather/dailySummary?cdate={date}`
+   - Returns the daily summary for the city and date.
 
-1. **Fetch History Data**
+2. **Fetch Weather Forecast**
+   - `GET /weather/forecast?city={city}`
+   - Returns the 5-day forecast for the selected city.
+
+3. **Fetch History Data**
    - `GET /api/weather/historyData?city={city}&date={date}`
    - Returns weather data for a specific city and date. 
 
-2. **Fetch Weather Forecast**
-   - `GET /forecast?city={city}`
-   - Returns the 5-day forecast for the selected city.
-
-3. **Daily Summaries**
-   - `GET /weather/dailySummary?cdate={date}`
-   - Returns the daily summary for the city and date.
 
 ## 📊 Dashboard & Visualizations
 - **Weather Data Trends:** Line charts for temperature, humidity, and wind speed.
 - **Weather Forecast:** Displays a 5-day forecast with weather icons and descriptions.
-- **Customizable Alerts:** Configure alert thresholds for key metrics like temperature, humidity, etc.
-
-## 🔒 Security
-The application integrates Spring Security to ensure secure access to the APIs. It employs role-based authentication, ensuring only authorized users can access sensitive data.
-
-- **User Roles:** Admin, User
-- **Token-based Authentication:** Secure API access
+- **Daily Summary** Daily Summary of weather data on the basis of date.
 
 ## ✅ Test Cases
 Comprehensive test cases have been implemented to cover the following:
@@ -100,20 +98,15 @@ Comprehensive test cases have been implemented to cover the following:
 - **Edge Cases:** Handling null data, API errors, and more.
 
 ## 🚀 Additional Features (Bonus)
-- **Prometheus & Grafana Monitoring:** Real-time system metrics (e.g., API latency, error rates) can be visualized and monitored through Grafana dashboards.
-- **Resilience with Redis & Resilience4j:** Implements rate limiting and fault tolerance mechanisms.
 - **Email Alerts:** Sends email notifications for critical weather conditions.
 
 ## 🏆 Achievements & Performance
-- 35% Improvement in Order Management Efficiency.
 - 20% Reduction in Processing Time for managing and retrieving data.
 - Efficient Data Aggregation: Optimized real-time data storage by updating summaries every 5 minutes.
 
 ## 📚 Documentation
-Detailed system documentation, including the class structure and implementation details, can be found in the project’s `/docs` directory. Prometheus and Grafana setup instructions are provided under `/monitoring-setup`.
+- [Detailed Documentation]()
 
-## 📝 License
-This project is licensed under the MIT License - see the LICENSE file for details.
 
 ## 📬 Contact
 For any inquiries, feel free to reach out to me:
