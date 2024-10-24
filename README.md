@@ -2,14 +2,24 @@
 
 This Real-Time Weather Monitoring System is designed to track, analyze, and visualize real-time weather data using the OpenWeatherMap API. Built with Java, Spring Boot, and MySQL, this project offers a dashboard for historical trends, current conditions, weather forecasts, and custom alerts. It includes a responsive UI and powerful backend logic, all packaged in a Dockerized environment for easy deployment.
 
+## 📝 Note to Reviewer:
+
+The OpenWeather API provides a free tier that allows us to retrieve only real-time weather data and forecast information. Unfortunately, it does not support fetching historical weather data with a free API key.
+
+To overcome this limitation, our application calculates **daily summaries** based on the **real-time weather data** collected every 5 minutes. The application fetches this data and stores it in the database. These stored entries are then used to generate both **daily summaries** and **historical data**.
+
+Upon initial startup, the dashboard may show limited results, as it relies on real-time data being fetched. However, after the application runs continuously for **1-2 hours** or more, it will collect enough weather data, allowing the dashboard to update dynamically with more comprehensive **daily summaries** and **historical trends**, reflecting real-time conditions accurately.
+
+This design ensures that the application functions as a **robust real-time weather monitoring system**, despite the API's limitations on historical data retrieval.
+
+---
+
 ## 🚀 Features
 - **Real-Time Weather Data:** Fetches live weather data from OpenWeatherMap API.
 - **Daily Summaries:** Aggregates daily weather data, including max/min temperatures, humidity, and wind speed.
 - **Weather Forecasts:** Provides accurate 5-day forecasts for selected cities.
 - **Custom Alerts:** Triggers alerts when temperature, wind speed, or humidity exceeds thresholds.
 - **Visualizations:** Displays trends via charts (temperature, humidity, and wind speed) using Thymeleaf and Bootstrap.
-- **Prometheus Monitoring:** Monitors API latency, error rates, and more.
-- **Redis Rate-Limiting & Circuit Breaker:** Implements rate limiting and resilience mechanisms with Redis and Resilience4j.
 - **REST APIs:** Well-documented endpoints for integration with external services.
 - **Email Alerts:** Sends notifications via email for significant weather changes.
 
@@ -18,16 +28,17 @@ This Real-Time Weather Monitoring System is designed to track, analyze, and visu
 - **Database:** MySQL, Redis (for rate-limiting)
 - **Frontend:** Thymeleaf, Bootstrap, CSS
 - **Data Source:** OpenWeatherMap API
-- **Visualization:** Grafana (for monitoring), Thymeleaf (for data visualization)
+- **Visualization:**  Thymeleaf (for data visualization)
 - **Containerization:** Docker, Docker Compose
-- **Monitoring:** Prometheus, Grafana, Redis, Resilience4j
+- **Monitoring:** Chart.js
 
 ## 📦 Prerequisites
 To run this project locally, ensure you have the following installed:
-- JDK 21 or later
+- JDK 21 or later (Strong Requirement)
 - Docker and Docker Compose
-- MySQL (optional if running through Docker)
+- MySQL 
 - Maven (to build the project)
+- IntelliJ IDEA
 
 ## ⚙️ Setup & Run
 Follow these steps to set up and run the application:
@@ -52,22 +63,22 @@ Follow these steps to set up and run the application:
 4. **Access the Dashboard**
    Once the application is running, you can access the weather monitoring dashboard by visiting:
     ```
-    http://localhost:8080
+    http://localhost:8080/dashboard/daily
     ```
 
-## 📋 Endpoints
+## 📋 API Endpoints (Use POSTMAN to test )
 The following REST APIs are available:
 
-1. **Fetch Weather Data**
-   - `GET /api/weather?city={city}&date={date}`
-   - Returns weather data for a specific city and date.
+1. **Fetch History Data**
+   - `GET /api/weather/historyData?city={city}&date={date}`
+   - Returns weather data for a specific city and date. 
 
 2. **Fetch Weather Forecast**
    - `GET /forecast?city={city}`
    - Returns the 5-day forecast for the selected city.
 
 3. **Daily Summaries**
-   - `GET /api/daily-summary?city={city}&date={date}`
+   - `GET /weather/dailySummary?cdate={date}`
    - Returns the daily summary for the city and date.
 
 ## 📊 Dashboard & Visualizations
