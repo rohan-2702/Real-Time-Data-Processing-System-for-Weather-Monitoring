@@ -96,11 +96,11 @@ docker-compose up
 
 ### 5. Access the Dashboard (Make sure port 8080 is free)
    - Once the application is running, you can access the weather monitoring dashboard by visiting:
+     ```bash
+        http://localhost:8080/dashboard/dailySummary
+        http://localhost:8080/dashboard/weatherForecast
+        http://localhost:8080/dashboard/historicalData
      ```
-    http://localhost:8080/dashboard/dailySummary
-    http://localhost:8080/dashboard/weatherForecast
-    http://localhost:8080/dashboard/historicalData
-    ```
 
 ## 📋 API Endpoints (Use POSTMAN to test )
 The following REST APIs are available:
