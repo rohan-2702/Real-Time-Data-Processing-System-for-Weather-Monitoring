@@ -140,7 +140,7 @@ Comprehensive test cases have been implemented to cover the following:
 - Efficient Data Aggregation: Optimized real-time data storage by updating summaries every 5 minutes.
 
 ## 📚 Documentation
-- [Detailed Documentation]()
+- [Detailed Documentation](https://drive.google.com/file/d/18Ghua5EUKi94J6of5vnqhDqdy1X68762/view?usp=sharing)
 
 
 ## 📬 Contact
