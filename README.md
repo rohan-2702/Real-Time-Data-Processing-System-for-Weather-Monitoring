@@ -43,7 +43,7 @@ To run this project locally, ensure you have the following installed:
 ## ⚙️ Setup & Run
 Follow these steps to set up and run the application:
 
-1. **Clone the Repository**  (Recommended to Download Zip)
+### 1. Clone the Repository (Recommended to Download Zip)
     ```bash
     git clone https://github.com/yourusername/weather-monitoring-system.git
     cd weather-monitoring-system
@@ -51,20 +51,20 @@ Follow these steps to set up and run the application:
 
 ## For Running application locally using Mysql .(Recommended)
    
-### 3. Setup Databse Configuration.
+### 2. Setup Databse Configuration.
   - Ensure MySQL is installed and running.
   - Create a new database name rule_engine_db in MySQL.
   ```bash
     CREATE DATABASE weather_monitoring;
   ```
- ### 4. Configure application.properties :
+ ### 3. Configure application.properties :
    - Update the src/main/resources/application.properties file with your MySQL configuration:
    ```bash
      spring.datasource.url=jdbc:mysql://localhost:3306/weather_monitoring
      spring.datasource.username=your_username
      spring.datasource.password=your_password
    ```
-### 5. Build project. 
+### 4`. Build project. 
   - Use Maven (use Intellij Maven terminal) to clean and package project
   ```bash
     mvn clean package
