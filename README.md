@@ -25,7 +25,7 @@ This design ensures that the application functions as a **robust real-time weath
 
 ## 🛠️ Technology Stack
 - **Backend:** Java, Spring Boot, Spring Security, REST APIs
-- **Database:** MySQL, Redis (for rate-limiting)
+- **Database:** MySQL, MySQL Workbench.
 - **Frontend:** Thymeleaf, Bootstrap, CSS
 - **Data Source:** OpenWeatherMap API
 - **Visualization:**  Thymeleaf (for data visualization)
@@ -43,22 +43,56 @@ To run this project locally, ensure you have the following installed:
 ## ⚙️ Setup & Run
 Follow these steps to set up and run the application:
 
-1. **Clone the Repository**
+1. **Clone the Repository**  (Recommended to Download Zip)
     ```bash
     git clone https://github.com/yourusername/weather-monitoring-system.git
     cd weather-monitoring-system
     ```
 
-2. **Build the Application**
-    ```bash
-    mvn clean install
-    ```
+## For Running application locally using Mysql .(Recommended)
+   
+### 3. Setup Databse Configuration.
+  - Ensure MySQL is installed and running.
+  - Create a new database name rule_engine_db in MySQL.
+  ```bash
+    CREATE DATABASE weather_monitoring;
+  ```
+ ### 4. Configure application.properties :
+   - Update the src/main/resources/application.properties file with your MySQL configuration:
+   ```bash
+     spring.datasource.url=jdbc:mysql://localhost:3306/weather_monitoring
+     spring.datasource.username=your_username
+     spring.datasource.password=your_password
+   ```
+### 5. Build project. 
+  - Use Maven (use Intellij Maven terminal) to clean and package project
+  ```bash
+    mvn clean package
+```
+  - After building start application ( You can also run main springboot app file)
+```bash
+   mvn spring-boot:run
+```
 
-3. **Run with Docker Compose**
-   Docker Compose makes it easy to spin up the application along with its dependencies like MySQL.
-    ```bash
-    docker-compose up --build
-    ```
+## For Running application using docker-compose file. (Optional)
+- No need to create database 
+- Just build  New Connection in MYSQL workbench. 
+- Use username: rohan
+- Use password: rohan
+- Use Port No: 3309. 
+- Just Change Configuration for root password in docker-compose file.
+```bash
+MYSQL_ROOT_PASSWORD: your_root_password.
+```
+ a. Build Application
+```bash
+mvn clean install
+mvn clean package
+```
+b. Run with Docker Compose.
+```bash
+docker-compose up
+```
 
 4. **Access the Dashboard**
    Once the application is running, you can access the weather monitoring dashboard by visiting:
@@ -99,6 +133,7 @@ Comprehensive test cases have been implemented to cover the following:
 
 ## 🚀 Additional Features (Bonus)
 - **Email Alerts:** Sends email notifications for critical weather conditions.
+- **Additional Paramters:** Wind Speed , Humidity added in project.
 
 ## 🏆 Achievements & Performance
 - 20% Reduction in Processing Time for managing and retrieving data.
