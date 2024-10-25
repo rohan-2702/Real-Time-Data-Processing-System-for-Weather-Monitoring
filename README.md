@@ -44,10 +44,10 @@ To run this project locally, ensure you have the following installed:
 Follow these steps to set up and run the application:
 
 ### 1. Clone the Repository (Recommended to Download Zip)
-    ```bash
+```bash
     git clone https://github.com/yourusername/weather-monitoring-system.git
     cd weather-monitoring-system
-    ```
+```
 
 ## For Running application locally using Mysql .(Recommended)
    
