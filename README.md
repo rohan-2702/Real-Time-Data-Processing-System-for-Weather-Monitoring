@@ -79,7 +79,7 @@ Follow these steps to set up and run the application:
 - Just build  New Connection in MYSQL workbench. 
 - Use username: rohan
 - Use password: rohan
-- Use Port No: 3309. 
+- Use Port No: 3308 
 - Just Change Configuration for root password in docker-compose file.
 ```bash
 MYSQL_ROOT_PASSWORD: your_root_password.
@@ -94,7 +94,7 @@ b. Run with Docker Compose.
 docker-compose up
 ```
 
-4. **Access the Dashboard**
+4. **Access the Dashboard** (Make sure port 8080 is free)
    Once the application is running, you can access the weather monitoring dashboard by visiting:
     ```
     http://localhost:8080/dashboard/dailySummary
