@@ -64,7 +64,7 @@ Follow these steps to set up and run the application:
      spring.datasource.username=your_username
      spring.datasource.password=your_password
    ```
-### 4`. Build project. 
+### 4. Build project. 
   - Use Maven (use Intellij Maven terminal) to clean and package project
   ```bash
     mvn clean package
@@ -94,8 +94,8 @@ b. Run with Docker Compose.
 docker-compose up
 ```
 
-4. **Access the Dashboard** (Make sure port 8080 is free)
-   Once the application is running, you can access the weather monitoring dashboard by visiting:
+### 5. Access the Dashboard (Make sure port 8080 is free)
+   - Once the application is running, you can access the weather monitoring dashboard by visiting:
     ```
     http://localhost:8080/dashboard/dailySummary
     http://localhost:8080/dashboard/weatherForecast
