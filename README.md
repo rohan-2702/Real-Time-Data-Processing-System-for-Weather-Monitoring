@@ -104,7 +104,7 @@ docker-compose up
 
 ## 📋 API Endpoints (Use POSTMAN to test )
 The following REST APIs are available:
-- [API Documentaion Link](Link)
+- [API Documentaion Link](https://documenter.getpostman.com/view/39266668/2sAY4si3rh)
   
 1. **Daily Summaries**
    - `GET /weather/dailySummary?cdate={date}`
